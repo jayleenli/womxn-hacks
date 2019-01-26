@@ -1,18 +1,20 @@
 {
-  "manifest_version": 2,
-
   "name": "Comment Tagger",
   "description": "Logs the most commonly used words in Youtube comments",
-  "version": "1.0",
+  "version": "0.1.1",
+  "manifest_version": 2,
   "icons": { "16": "icon.png",
            "48": "icon.png",
           "128": "icon.png" },  
+  "permissions": [
+    "storage", 
+    "*://*.youtube.com/*"
+  ],
   
   "content_scripts": [
 	{
-	  "matches": ["http://youtube.com/*"],
-      "js": ["jQuery.min.js","tagger.js"]
+	   "matches": ["*://*.youtube.com/*"],
+     "js": ["jQuery.min.js","tagger.js"]
 	}
   ]
-  
 }
